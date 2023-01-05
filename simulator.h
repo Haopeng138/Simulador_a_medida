@@ -13,6 +13,8 @@ class CSimulator{
       CSimulator();
       //Destrueix el model
       ~CSimulator();
+
+      // Añadir eventos a la lista
       void scheduleEvent(CSimulationEvent* event);
       CSimulationObject* m_predecessor;
       CSimulationObject* m_successor;

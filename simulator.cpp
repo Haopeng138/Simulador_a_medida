@@ -4,14 +4,16 @@
 #include "preObject.h"
 #include "postObject.h"
 #include "ComissariObject.h"
-
+#include "UnitatSuportArrencada.h"
 
 CSimulator::CSimulator(){
     //Aquest mètode el podeu canviar si ho creieu necessari
     std::cout << "Exemple amb dos elements \n";
     m_predecessor=new CPreObject(this,"PreObjecte");
     m_successor=new CPostObject(this,"PostObjecte");
-    mnty=new CComissariObject(this,"Comissari",m_predecessor,m_successor);
+    // mnty=new CComissariObject(this,"Comissari",m_predecessor,m_successor);
+    mnty=new UnitatSuportArrencada(this,60,m_successor);
+   
     run();
 }
 CSimulator::~CSimulator(){

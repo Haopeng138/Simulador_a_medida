@@ -8,7 +8,7 @@
 class CSimulator;
 
 //Afegiu els estats que siguin necessaris per a que funcioni correctament...
-enum enumStateObject { sLLIURE,sMOVEMENT,sAPARCAT};
+enum enumStateObject { sLLIURE,sMOVEMENT,sAPARCAT,sCONECTAT,sDESCONECTAT};
 
 class CSimulationObject{    
     public:

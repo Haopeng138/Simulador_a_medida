@@ -8,7 +8,7 @@ void CResourceHandling::simulationStart(){
      * Quan tingueu clar els atributs es generarà un arxiu amb diferents missions (arribades o sortides d'aeronaus caracteritzades)
      * De moment sols es creant dos missions, podeu aprofitar per a fer proves canviant atributs de l'objecte missió
      * ******/
-    this->m_Simulator->scheduleEvent(new CSimulationEvent(8,this,this,new CMission("una ordre"),eORDRE));
+    this->m_Simulator->scheduleEvent(new CSimulationEvent(8,this,this,new CMission("una ordre"),e_UNITAT_SUPORT_CARREGA));
     /*********
      * La programació dels esdeveniments temporals s'expressen en aquest cas com les unitats que cal que passin 
      * a partir del temps actual perquè l'esdeveniment es consideri executat.

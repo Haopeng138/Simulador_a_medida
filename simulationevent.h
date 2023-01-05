@@ -7,12 +7,16 @@
 class CMission;
 
 //Afegiu els enumerats que considereu necessaris...
-enum enumEventType { eORDRE,eMOURE,eAPARCAR,eSTART};
+enum enumEventType {
+    eORDRE,eMOURE,eAPARCAR,eSTART,
+    /*Propias*/
+    e_UNITAT_SUPORT_CARREGA,e_UNITAT_SUPORT_FI_CARREGA};
 /*
 * eORDRE --> el recurs rep una missió
 * eMOURE --> el recurs es mou
 * eAPARCAR --> el recurs aparca
 * eSTART --> el recurs pot arrancar les seves operacions
+* e_UNITAT_SUPORT_CARREGA --> La bateria envia energia cap l'avio
 */
 
 class CSimulationEvent{
