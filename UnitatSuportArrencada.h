@@ -13,7 +13,7 @@ private:
     CSimulationObject* m_precedecessor;
     CSimulationObject* m_successor;
 public:
-    UnitatSuportArrencada(CSimulator* simulator,int potencia,CSimulationObject* post);
+    UnitatSuportArrencada(CSimulator* simulator,std::string nom,int potencia,CSimulationObject* post);
     ~UnitatSuportArrencada(){};
 
     void showStatistics();

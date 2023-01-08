@@ -5,6 +5,7 @@
 #include "postObject.h"
 #include "ComissariObject.h"
 #include "UnitatSuportArrencada.h"
+#include <string>
 
 CSimulator::CSimulator(){
     //Aquest mètode el podeu canviar si ho creieu necessari
@@ -12,7 +13,7 @@ CSimulator::CSimulator(){
     m_predecessor=new CPreObject(this,"PreObjecte");
     m_successor=new CPostObject(this,"PostObjecte");
     // mnty=new CComissariObject(this,"Comissari",m_predecessor,m_successor);
-    mnty=new UnitatSuportArrencada(this,60,m_successor);
+    mnty=new UnitatSuportArrencada(this,"UnidadArranque",60,m_successor);
    
     run();
 }
