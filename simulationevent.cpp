@@ -21,7 +21,7 @@ void CSimulationEvent::executed(){
 }
 
 std::string CSimulationEvent::trace(){
-  return std::to_string(m_eventTime)+"[" + m_provider->m_nom+" -> "+m_consumer->m_nom+"]"+ m_consumer->m_nom +" "+ std::to_string(m_consumer->getState());
+  return std::to_string(m_eventTime)+"[" + m_provider->m_nom+" -> "+m_consumer->m_nom+"] "+ m_consumer->m_nom +" \n";
  
 }
 
