@@ -9,6 +9,7 @@ private:
     /* data */
     int potencia;
     int potencia_subministrat;
+    float tiempo_de_carga;
     float tiempo_inicial;
     CSimulationObject* m_precedecessor;
     CSimulationObject* m_successor;

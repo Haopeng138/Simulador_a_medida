@@ -18,6 +18,7 @@ void CPreObject::showStatistics()  {
 //Processar un esdeveniment de simulació, funció pura que us toca implementar
 void CPreObject::processEvent (CSimulationEvent* event)  {
     //No he de processar res de forma directe, però si creieu que heu de fer res ho feu.
+    
 }
 
 //Métode que el simulador invocarà a l'inici de la simulació, abans de que hi hagi cap esdeveniment a la llista d'esdeveniments

@@ -8,11 +8,13 @@ using namespace std;
 
 UnitatSuportArrencada::UnitatSuportArrencada(CSimulator *simulator,string nom, int potencia, CSimulationObject *post):CResourceHandling(simulator,nom)
 {
+    this->potencia = potencia;
 }
 
 void UnitatSuportArrencada::showStatistics()
 {
-    std::cout << "Potencia subministrat al avió : " << potencia_subministrat << "(W)Vatios" << endl;
+    std::cout << "Temps de carga total : " << tiempo_de_carga << " s " << endl;
+    std::cout << "Potencia subministrat al avió total : " << potencia_subministrat << "(W)Vatios" << endl;
 }
 
 void UnitatSuportArrencada::processEvent(CSimulationEvent *event)
@@ -25,9 +27,13 @@ void UnitatSuportArrencada::processEvent(CSimulationEvent *event)
     }
 
     if (event->getEventType()==e_UNITAT_SUPORT_FI_CARREGA && getState()==sCONECTAT){
-        potencia_subministrat += potencia*(event->getTime()-tiempo_inicial);
+        float tmp = (event->getTime()-tiempo_inicial);
+        tiempo_de_carga += tmp; 
+        potencia_subministrat += potencia*tmp;
         setState(sDESCONECTAT);
     }
+
+   
 }
 
 void UnitatSuportArrencada::simulationStart()
@@ -35,11 +41,12 @@ void UnitatSuportArrencada::simulationStart()
     CResourceHandling::simulationStart();
     setState(sDESCONECTAT);
     std::cout << "Inicializando la unidad de apoyo al arranque" << endl;
+    tiempo_de_carga = 0;
     potencia_subministrat = 0;
 }
 
 void UnitatSuportArrencada::simulationEnd()
 {
-    
+
     showStatistics();
 }
