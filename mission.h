@@ -18,7 +18,7 @@ public:
     bool isLanding(){return m_landing;}//És un vol que ha aterrat o vol despegar (false)
     bool isFrozen(){return m_frozen;}//Fa fred ? o una calor de l'òstia (false)
 
-    bool isCharged(){return m_isCharged}// Si está cargado el avión 
+    bool isCharged(){return m_isCharged;}// Si está cargado el avión 
 private:
     //Actualitza la traça d'esdeveniments on aquesta entitat s'ha vist implicat
     void traceEvent(CSimulationEvent* event);   

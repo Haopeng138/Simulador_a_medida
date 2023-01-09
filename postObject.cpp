@@ -19,6 +19,7 @@ void CPostObject::showStatistics()  {
 
 //Processar un esdeveniment de simulació, funció pura que us toca implementar
 void CPostObject::processEvent (CSimulationEvent* event)  {
+   
 }
 
 //Métode que el simulador invocarà a l'inici de la simulació, abans de que hi hagi cap esdeveniment a la llista d'esdeveniments

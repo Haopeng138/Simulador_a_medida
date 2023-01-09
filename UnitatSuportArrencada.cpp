@@ -43,6 +43,7 @@ void UnitatSuportArrencada::processEvent(CSimulationEvent *event)
         std::cout << "Estas intentando desconectar algo que ya no está conectado" << endl;
     }
 
+    
    
 }
 
@@ -59,7 +60,9 @@ void UnitatSuportArrencada::simulationStart()
 void UnitatSuportArrencada::simulationEnd()
 {
     if(getState()==sCONECTAT){
-        std::cout << "No se ha desconectado del avion.\n Haga una revisión.\n No se mostrará los estatisticas" << endl;
+        std::cout << "No se ha desconectado del avion.\n Haga una revisión." << endl;
+        setState(sDESCONECTAT);
+        std::cout << "Se mostrará las estatisticas obtenida hasta ahora" << endl;
     }else{
         showStatistics();
     }
