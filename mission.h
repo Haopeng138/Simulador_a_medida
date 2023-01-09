@@ -17,6 +17,8 @@ public:
     bool inFinger(){return m_finger;}//Està aparcat a finger ? o en remot (false)
     bool isLanding(){return m_landing;}//És un vol que ha aterrat o vol despegar (false)
     bool isFrozen(){return m_frozen;}//Fa fred ? o una calor de l'òstia (false)
+
+    bool isCharged(){return m_isCharged}// Si está cargado el avión 
 private:
     //Actualitza la traça d'esdeveniments on aquesta entitat s'ha vist implicat
     void traceEvent(CSimulationEvent* event);   
@@ -24,5 +26,6 @@ private:
     bool m_landing;
     bool m_finger;
     bool m_frozen;
+    bool m_isCharged;
 };
 

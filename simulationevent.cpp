@@ -21,7 +21,15 @@ void CSimulationEvent::executed(){
 }
 
 std::string CSimulationEvent::trace(){
-  return std::to_string(m_eventTime)+"[" + m_provider->m_nom+" -> "+m_consumer->m_nom+"] "+ m_consumer->m_nom +" \n";
+  std::string tmp;
+  if (m_consumer->getState()==sCONECTAT){
+    tmp = "Conectado";
+  }else if (m_consumer->getState()==sDESCONECTAT){
+    tmp = "Desconectado";
+  }else{
+    tmp = "Otros estados";
+  }
+  return std::to_string(m_eventTime)+"[" + m_provider->m_nom+" -> "+m_consumer->m_nom+"] "+ m_consumer->m_nom + " "+ tmp + " \n";
  
 }
 

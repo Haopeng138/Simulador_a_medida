@@ -7,8 +7,8 @@ class UnitatSuportArrencada:public CResourceHandling
 {
 private:
     /* data */
-    int potencia;
-    int potencia_subministrat;
+    float potencia;
+    float potencia_subministrat;
     int numero_coneccion;
     float tiempo_de_carga;
     float tiempo_inicial;

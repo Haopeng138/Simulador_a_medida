@@ -8,7 +8,7 @@ using namespace std;
 
 UnitatSuportArrencada::UnitatSuportArrencada(CSimulator *simulator,string nom, int potencia, CSimulationObject *post):CResourceHandling(simulator,nom)
 {
-    this->potencia = potencia;
+    this->potencia =float(potencia);
 }
 
 void UnitatSuportArrencada::showStatistics()
@@ -34,8 +34,10 @@ void UnitatSuportArrencada::processEvent(CSimulationEvent *event)
 
     if (event->getEventType()==e_UNITAT_SUPORT_FI_CARREGA && getState()==sCONECTAT){
         float tmp = (event->getTime()-tiempo_inicial);
-        tiempo_de_carga += tmp; 
-        potencia_subministrat += potencia*tmp;
+        tiempo_de_carga += tmp;     
+        float perdida_potencia = 1.0F-float(rand()%10)/float(100);
+        potencia_subministrat += (potencia*perdida_potencia)*tmp;
+
         setState(sDESCONECTAT);
     }else if (event->getEventType()==e_UNITAT_SUPORT_FI_CARREGA && getState()==sDESCONECTAT){
         std::cout << "Estas intentando desconectar algo que ya no está conectado" << endl;
